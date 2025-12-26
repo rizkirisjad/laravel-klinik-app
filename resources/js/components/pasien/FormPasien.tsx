@@ -1,7 +1,9 @@
 import {
     Dialog,
+    DialogClose,
     DialogContent,
     DialogDescription,
+    DialogFooter,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -271,18 +273,20 @@ const FormPasien = ({ pasien, setSearch }: FormPasienProps) => {
                                 className="mt-2"
                             />
                         </div>
-                        <Button className="block w-full" disabled={processing}>
-                            {processing && <Spinner />}
-                            {pasien ? 'Simpan Data' : 'Tambah Data'}
-                        </Button>
-                        <Button
-                            type="button"
-                            variant="outline"
-                            onClick={() => setOpen(false)}
-                            className="block w-full"
-                        >
-                            Batal
-                        </Button>
+                        <DialogFooter>
+                            <DialogClose asChild>
+                                <Button
+                                    variant="outline"
+                                    onClick={() => setOpen(false)}
+                                >
+                                    Batal
+                                </Button>
+                            </DialogClose>
+                            <Button type="submit" disabled={processing}>
+                                {processing && <Spinner />}
+                                {pasien ? 'Simpan Perubahan' : 'Tambah Data'}
+                            </Button>
+                        </DialogFooter>
                     </form>
                 </div>
             </DialogContent>

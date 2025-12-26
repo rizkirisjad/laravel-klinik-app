@@ -26,7 +26,7 @@ class PasienStoreRequest extends FormRequest
             'tanggal_lahir' => 'required|date|before:today',
             'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
             'nomor_telepon' => 'nullable|string|max:20',
-            'alamat' => 'nullable|text|max:500',
+            'alamat' => 'nullable|string|max:500',
         ];
     }
 
@@ -43,7 +43,7 @@ class PasienStoreRequest extends FormRequest
             'jenis_kelamin.in' => 'Jenis kelamin harus berupa "Laki-laki" atau "Perempuan".',
             'nomor_telepon.string' => 'Nomor telepon harus berupa teks.',
             'nomor_telepon.max' => 'Panjang nomor telepon maksimal 20 karakter.',
-            'alamat.text' => 'Alamat harus berupa teks.',
+            'alamat.string' => 'Alamat harus berupa teks.',
             'alamat.max' => 'Panjang alamat maksimal 500 karakter.',
         ];
     }
