@@ -10,13 +10,12 @@ import {
 } from '@/components/ui/table';
 import { PaginationMeta, Pasien } from '@/types';
 import { Trash } from 'lucide-react';
-import { Dispatch, SetStateAction } from 'react';
 
 interface Props {
     data: Pasien[];
     meta: PaginationMeta;
     onDelete: (id: number) => void;
-    setSearch: Dispatch<SetStateAction<string>>;
+    setSearch: (v: string) => void;
 }
 
 export default function PasienTable({

@@ -11,7 +11,7 @@ import {
 import { Pasien } from '@/types';
 import { useForm } from '@inertiajs/react';
 import { Edit } from 'lucide-react';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { useState } from 'react';
 import { toast } from 'sonner';
 import InputError from '../input-error';
 import { Button } from '../ui/button';
@@ -29,7 +29,7 @@ import { Textarea } from '../ui/textarea';
 
 type FormPasienProps = {
     pasien?: Pasien;
-    setSearch: Dispatch<SetStateAction<string>>;
+    setSearch: (v: string) => void;
 };
 
 const FormPasien = ({ pasien, setSearch }: FormPasienProps) => {

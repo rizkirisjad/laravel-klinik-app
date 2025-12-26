@@ -12,11 +12,10 @@ import {
 } from '@/components/ui/select';
 import { handleChangePerPage } from '@/lib/utils';
 import { RefreshCcw, Search } from 'lucide-react';
-import { Dispatch, SetStateAction } from 'react';
 
 interface Props {
     search: string;
-    onSearchChange: Dispatch<SetStateAction<string>>;
+    onSearchChange: (v: string) => void;
     onSubmit: (e: React.FormEvent) => void;
     onClear: () => void;
     path: string;
